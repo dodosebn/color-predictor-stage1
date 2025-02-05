@@ -11,11 +11,13 @@ body {
   height: 100vh;
   background-repeat: no-repeat;
   padding: 0.5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   /* align-content: center; */
+}
+body, .header_container, .targetBoxContainer  {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
 }
 /* App.css */
 
@@ -63,18 +65,6 @@ aside {
   display: none;
 }
 /* .gameCarrier {
-  opacity: 0;
-  transform: scale(0.5) translateY(30px);
-  transition: opacity 3s ease-in-out 0.5s, transform 2s ease-out 0.3s;
-} */
-
-/* .loading-dey.gameCarrier {
-  opacity: 1;
-  transform: scale(1) translateY(0);
-} */
-
-
-
 /* Styles for header.jsx */
 .header_container {
   background-color: #c400fe;
@@ -82,27 +72,41 @@ aside {
   padding:0.5rem 1rem 0 1rem;
   border-radius: 7px 7px 0 0;
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.checksaInfo{
-  color: #f6e1fb;
-  padding-top: 0.5rem;
-  font-size: 1.2rem;
 }
 /* Center the target color box */
 .targetBoxContainer {
-  display: flex;
-  justify-content: center;
   padding-top: 1.5rem;
 }
 
 .targetColorBox {
-  box-shadow: 2px 2px 2px #fff;
-  background-color: aqua;
+  /* border: 3px solid black;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); */
   width: 18rem;
   height: 6rem;
+}
+.checksaInfo{
+  padding-top: 0.5rem;
+  font-size: 1.2rem;
+}
+.wrongResult{
+  color: red !important;
+}
+.rightResult{
+  color:#f6e1fb;
+}
+@keyframes resultanima{
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.resultInfo {
+  animation: resultanima 0.5s ease-in-out;
 }
 
 /* Styles for mainPlace.jsx */

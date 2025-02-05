@@ -6,6 +6,7 @@ const ColorOptBtn = ({ color, handleGuess }) => {
       className="btnColorOp"
       style={{ backgroundColor: color }}
       onClick={() => handleGuess(color)}
+      data-testid="colorOption"
     >
       {/* Button */}
     </button>

@@ -5,9 +5,21 @@ import RotateEffect from './components/customs/rotateEffect';
 
 function App() {
   const [whenLoading, setWhenLoading] = useState(true);
-  const colorsToBeSwitched = ['#B22222', '#DC143C', '#FF8C00', '#FF7F50', '#FFD700', '#F0E68C', '#20B2AA', '#40E0D0', '#7B68EE', '#6A5ACD', '#BC8F8F', '#DB7093', '#4682B4', '#8A2BE2', '#A52A2A', '#5F9EA0', '#D2691E', '#FF1493'];
-
-
+  const colorsToBeSwitched = [
+    '#F1823B',
+    '#9AC9C1',
+    '#5D89E4',
+    '#69892C',
+    '#AF7351',
+    '#8785E9',
+    '#6B83BE',
+    '#D7F18F',
+    '#E8FF08',
+    '#F2B181',
+    '#E42FC6',
+    '#0D16E6'
+  ];
+  
   const getRandColor = () => colorsToBeSwitched[Math.floor(Math.random() * colorsToBeSwitched.length)];
 
   const [toBeGuessedColor, setToBeGuessedColor] = useState(getRandColor);
@@ -20,7 +32,7 @@ function App() {
       setToBeGuessedColor(getRandColor());
       setScore(formal => formal + 1);
     } else {
-      setResultInfo("Wrong! Try Again.");
+      setResultInfo("Wrong, Try Again!");
     }
   };
 

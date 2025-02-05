@@ -26,7 +26,7 @@ const MainPlace = ({
     );
   }
   // shuffle mk the accurate soln dey diff spots
-  hngRecomColors = hngRecomColors.sort(() => Math.random() - 0.7);
+  hngRecomColors = hngRecomColors.sort(() => Math.random() - 0.5);
 
   return (
     <main>
@@ -36,7 +36,7 @@ const MainPlace = ({
         ))}
       </div>
       <div className="restart">
-        <button onClick={startANewGame}>New Game</button>
+        <button onClick={startANewGame} data-testid="newGameButton">New Game</button>
       </div>
     </main>
   );
