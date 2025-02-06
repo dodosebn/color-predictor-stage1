@@ -5,20 +5,7 @@ import RotateEffect from './components/customs/rotateEffect';
 
 function App() {
   const [whenLoading, setWhenLoading] = useState(true);
-  const colorsToBeSwitched = [
-    '#F1823B',
-    '#9AC9C1',
-    '#5D89E4',
-    '#69892C',
-    '#AF7351',
-    '#8785E9',
-    '#6B83BE',
-    '#D7F18F',
-    '#E8FF08',
-    '#F2B181',
-    '#E42FC6',
-    '#0D16E6'
-  ];
+  const colorsToBeSwitched = ['red', 'green', 'brown', 'purple', 'blue', 'pink', 'black', 'orange', 'yellow', 'gray', 'white'];
   
   const getRandColor = () => colorsToBeSwitched[Math.floor(Math.random() * colorsToBeSwitched.length)];
 
@@ -30,17 +17,21 @@ function App() {
     if (color === toBeGuessedColor) {
       setResultInfo("Correct!");
       setToBeGuessedColor(getRandColor());
-      setScore(formal => formal + 1);
+      setScore(prev => prev + 1);
     } else {
       setResultInfo("Wrong, Try Again!");
     }
+
+    setTimeout(() => {
+      setResultInfo("");
+    }, 1000);
   };
 
   const startANewGame = () => {
     setToBeGuessedColor(getRandColor());
     setResultInfo("");
     setScore(0);
-  }
+  };
 
   return (
     <div className="App">
